@@ -30,7 +30,7 @@ class RssReader
   # Parse RSS feed and pull pubDates out of each item
   def rss_feed_pub_dates(feed_url)
     pub_dates = []
-    open(feed_url) do |rss|
+    URI.open(feed_url) do |rss|
       feed = RSS::Parser.parse(rss)
       feed.items.each do |item|
         pub_dates << item.pubDate

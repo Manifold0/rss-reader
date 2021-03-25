@@ -22,6 +22,19 @@ class RssReader
     pub_dates
   end
 
+  def includes_inactive?(pub_dates, inactivity_window)
+    pub_dates.each_with_index do |date, index|
+      unless index == pub_dates.size - 1
+        time_between = date - pub_dates[index + 1]
+        if time_between > inactivity_window
+          return true
+        end
+      end
+    end
+    false
+  end
+
+
 
 end
 

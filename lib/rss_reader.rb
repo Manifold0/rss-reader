@@ -4,8 +4,8 @@ class RssReader
   require_relative 'example_data'
 
   # rss_dictionary: hash of company names and RSS urls
-  # days_inactive: integer number of days
-  def initialize(rss_dictionary, days_inactive)
+  # days_inactive: integer number of days, default 1
+  def initialize(rss_dictionary, days_inactive = 1)
     @rss_dictionary = rss_dictionary
     @days_inactive = days_inactive
   end

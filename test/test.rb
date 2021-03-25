@@ -9,4 +9,7 @@ describe RssReader do
 
     expect(reader.inactive_companies).to be_an(Array)
   end
-end
+
+  it "returns an array containing strings" do
+
+  end

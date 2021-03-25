@@ -10,6 +10,6 @@ describe RssReader do
   end
 
   it "returns an array containing strings" do
-
+    expect(reader.inactive_companies.first).to be_a(String)
   end
 end

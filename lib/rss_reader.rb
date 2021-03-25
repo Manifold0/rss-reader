@@ -10,7 +10,19 @@ class RssReader
   end
 
   def inactive_companies
-
+    inactive = []
+    @rss_dictionary.each do |company, urls|
+      dates = []
+      urls.each do |url|
+        dates << rss_feed_pub_dates(url)
+      end
+      # Flatten nested arrays, then sort dates and reverse them to get sorting from newest to oldest
+      dates = dates.flatten.sort.reverse
+      if includes_inactive?(dates, @days_inactive)
+        inactive << company
+      end
+    end
+    inactive
   end
 
   # Parse RSS feed and pull pubDates out of each item

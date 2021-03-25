@@ -1,6 +1,7 @@
 class RssReader
   require 'rss' # basic RSS library to parse the feed
   require 'open-uri' # basic wrapper library for HTTP to get feed data
+  require_relative 'example_data'
 
   # rss_dictionary: hash of company names and RSS urls
   # days_inactive: integer number of days

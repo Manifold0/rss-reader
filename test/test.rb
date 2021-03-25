@@ -3,11 +3,10 @@ class Test
 
   require_relative '../lib/rss_reader.rb'
 
-  describe RssReader do
-    it "returns a list of companies" do
-      reader = RssReader.new(Example.new.data, 7)
+describe RssReader do
+  it "returns an array" do
+    reader = RssReader.new(Example.new.data, 7)
 
-      expect(reader.inactive_companies).to be_an(Array)
-    end
+    expect(reader.inactive_companies).to be_an(Array)
   end
 end

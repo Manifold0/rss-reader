@@ -42,9 +42,9 @@ class RssReader
   # Compare dates to check if the time between any two dates is ever greater than the given window
   def includes_inactive?(dates, inactivity_period)
     dates.each_with_index do |date, index|
-      unless index == pub_dates.size - 1
+      unless index == dates.size - 1
         # Compare dates with simple operand to get simple number of days difference
-        time_between = date - pub_dates[index + 1]
+        time_between = date - dates[index + 1]
         if time_between > inactivity_period
           return true
         end
@@ -52,9 +52,6 @@ class RssReader
     end
     false
   end
-
-
-
 end
 
 

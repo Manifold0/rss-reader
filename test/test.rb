@@ -1,7 +1,6 @@
-class Test
-  require 'rspec'
+require 'rspec/autorun'
 
-  require_relative '../lib/rss_reader.rb'
+require_relative '../lib/rss_reader.rb'
 
 describe RssReader do
   it "returns an array" do
@@ -13,3 +12,4 @@ describe RssReader do
   it "returns an array containing strings" do
 
   end
+end

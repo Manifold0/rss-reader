@@ -14,6 +14,7 @@ class RssReader
     inactive = []
     @rss_dictionary.each do |company, urls|
       dates = []
+      # Assumes URLs will come in an array
       urls.each do |url|
         dates << rss_feed_pub_dates(url)
       end

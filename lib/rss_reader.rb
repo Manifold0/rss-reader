@@ -7,6 +7,21 @@ class RssReader
     @days_inactive = days_inactive
   end
 
+  def inactive_companies
+
+  end
+
+  def rss_feed_pub_dates(feed_url)
+    pub_dates = []
+    open(feed_url) do |rss|
+      feed = RSS::Parser.parse(rss)
+      feed.items.each do |item|
+        pub_dates << item.pubDate
+      end
+    end
+    pub_dates
+  end
+
 
 end
 
